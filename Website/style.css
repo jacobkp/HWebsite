@@ -1,0 +1,178 @@
+/* Import Open Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap'); /* Ensure 400 weight is imported */
+
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Use Open Sans as the primary font */
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* Header Styling */
+.page-header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo {
+    height: 25px;
+    width: auto;
+}
+
+.header-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area Styling */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Title Section (Logo + H1) */
+.title-section {
+    display: flex; /* Use flexbox for side-by-side alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between logo and title - adjust as needed */
+    margin-bottom: 20px; /* Space below the title section */
+    flex-wrap: wrap; /* Allow wrapping on small screens if needed */
+}
+
+.main-logo {
+    height: 72px; /* Specific height requested */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+}
+
+h1 {
+    font-size: 56px; /* Specific size requested */
+    font-weight: 400; /* Regular weight */
+    color: #000000;
+    line-height: 1.2; /* Adjust line-height for large font */
+}
+
+/* Subheading */
+.subheading {
+    font-size: 32px; /* Specific size requested */
+    font-weight: 400; /* Regular weight */
+    color: #333; /* Dark Grey text */
+    margin-bottom: 40px; /* Space below subheading */
+    max-width: 650px; /* Adjust max-width if needed for the larger font */
+    line-height: 1.4; /* Adjust line-height */
+}
+
+/* Button Styling for "Read Summary" */
+.button-link {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: #333333;
+    background-color: #ffffff;
+    text-decoration: none;
+    font-size: 1em; /* Assuming button text size is standard */
+    font-weight: 400; /* Regular weight for button text */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #f5f5f5;
+    border-color: #bbbbbb;
+}
+
+/* Footer Styling */
+.page-footer {
+    width: 100%;
+    padding: 15px 40px;
+    text-align: right;
+    font-size: 0.8em;
+    color: #666666;
+    flex-shrink: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) { /* Adjust breakpoint if needed */
+    h1 {
+        font-size: 48px; /* Scale down heading */
+    }
+    .subheading {
+        font-size: 26px; /* Scale down subheading */
+    }
+    .main-logo {
+        height: 60px; /* Scale down logo */
+    }
+    .title-section {
+        gap: 15px; /* Reduce gap */
+    }
+}
+
+@media (max-width: 600px) {
+    .page-header, .page-footer {
+        padding: 15px 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .subheading {
+        font-size: 22px;
+    }
+    .main-logo {
+        height: 50px;
+    }
+    .header-logo {
+        height: 20px;
+    }
+    .button-link {
+        padding: 8px 20px;
+        font-size: 0.95em;
+    }
+    .page-footer {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 480px) {
+     .title-section {
+        /* Optional: Stack logo and title vertically on very small screens */
+        /* flex-direction: column; */
+        gap: 10px;
+    }
+     h1 {
+        font-size: 32px;
+    }
+    .subheading {
+        font-size: 18px;
+        max-width: 90%; /* Prevent overflow */
+    }
+     .main-logo {
+        height: 40px;
+    }
+}
