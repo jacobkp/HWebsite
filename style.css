@@ -176,3 +176,45 @@ h1 {
         height: 40px;
     }
 }
+
+/* Button Container Styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Button Styling (your existing button-link style) */
+.button-link {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: #333333;
+    background-color: #f9fafa;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 400;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #f5f5f5;
+    border-color: #bbbbbb;
+}
+
+/* Responsive Adjustments for buttons */
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 15px; /* Reduce gap between stacked buttons */
+    }
+    
+    .button-link {
+        width: 100%; /* Make buttons full width on mobile */
+        max-width: 200px; /* Optional: limit maximum width */
+        text-align: center; /* Center button text */
+    }
+}
