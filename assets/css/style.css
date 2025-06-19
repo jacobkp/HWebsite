@@ -317,8 +317,8 @@ body {
 }
 
 .activate-btn {
-    background: white;
-    color: #333;
+    background:#333;
+    color: #ffffff;
     border: 2px solid #333;
     padding: 15px 40px;
     font-size: 1rem;
