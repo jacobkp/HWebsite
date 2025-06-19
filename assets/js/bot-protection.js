@@ -134,31 +134,35 @@ class BotProtectionDemo {
         browserBot.className = `bot ${type}`;
         browserBot.innerHTML = robotSVGs[type];
         browserBot.style.position = 'absolute';
-        browserBot.style.width = '20px';
-        browserBot.style.height = '20px';
         
-        // Responsive bot positioning based on screen size
+        // Responsive bot positioning and sizing based on screen size
+        const isSmallMobile = window.innerWidth <= 480;
         const isTablet = window.innerWidth <= 768;
-        const isMobile = window.innerWidth <= 480;
         
-        let botsPerRow, botSpacing, startOffset;
+        let botsPerRow, botSpacing, startOffset, botSize;
         
-        if (isMobile) {
-            botsPerRow = 6;  // Fewer bots per row on mobile
-            botSpacing = 18; // Tighter spacing
-            startOffset = 8;
+        if (isSmallMobile) {
+            botsPerRow = 5;  // Even fewer bots per row on small mobile
+            botSpacing = 15; // Much tighter spacing
+            startOffset = 5;
+            botSize = '12px'; // Smaller bots
         } else if (isTablet) {
-            botsPerRow = 8;  // Medium for tablets
-            botSpacing = 20;
-            startOffset = 8;
+            botsPerRow = 7;  // Medium for tablets
+            botSpacing = 18;
+            startOffset = 6;
+            botSize = '16px';
         } else {
             botsPerRow = 10; // Full desktop
             botSpacing = 25;
             startOffset = 10;
+            botSize = '20px';
         }
         
+        browserBot.style.width = botSize;
+        browserBot.style.height = botSize;
+        
         const gridX = (this.activeBots.length % botsPerRow) * botSpacing + startOffset;
-        const gridY = Math.floor(this.activeBots.length / botsPerRow) * 18 + 30;
+        const gridY = Math.floor(this.activeBots.length / botsPerRow) * (isSmallMobile ? 14 : 18) + (isSmallMobile ? 20 : 30);
         
         browserBot.style.left = gridX + 'px';
         browserBot.style.top = gridY + 'px';
@@ -209,19 +213,19 @@ class BotProtectionDemo {
 
     repositionBots() {
         // Responsive positioning
+        const isSmallMobile = window.innerWidth <= 480;
         const isTablet = window.innerWidth <= 768;
-        const isMobile = window.innerWidth <= 480;
         
         let botsPerRow, botSpacing, startOffset;
         
-        if (isMobile) {
-            botsPerRow = 6;
-            botSpacing = 18;
-            startOffset = 8;
+        if (isSmallMobile) {
+            botsPerRow = 5;
+            botSpacing = 15;
+            startOffset = 5;
         } else if (isTablet) {
-            botsPerRow = 8;
-            botSpacing = 20;
-            startOffset = 8;
+            botsPerRow = 7;
+            botSpacing = 18;
+            startOffset = 6;
         } else {
             botsPerRow = 10;
             botSpacing = 25;
@@ -230,7 +234,7 @@ class BotProtectionDemo {
         
         this.activeBots.forEach((bot, index) => {
             const gridX = (index % botsPerRow) * botSpacing + startOffset;
-            const gridY = Math.floor(index / botsPerRow) * 18 + 30;
+            const gridY = Math.floor(index / botsPerRow) * (isSmallMobile ? 14 : 18) + (isSmallMobile ? 20 : 30);
             
             bot.element.style.transition = 'all 0.3s ease';
             bot.element.style.left = gridX + 'px';

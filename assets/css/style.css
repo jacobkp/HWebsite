@@ -93,7 +93,7 @@ body {
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem; /* Reduced default padding */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,8 +103,8 @@ body {
 .game-boundary {
     border: 2px dashed #ccc;
     border-radius: 8px;
-    padding: 2rem;
-    margin: 2rem 0;
+    padding: 1.5rem; /* Reduced default padding */
+    margin: 1.5rem 0; /* Reduced default margin */
     width: 100%;
     max-width: 900px;
     position: relative;
@@ -317,8 +317,8 @@ body {
 }
 
 .activate-btn {
-    background: #333;
-    color: #ffffff;
+    background: white;
+    color: #333;
     border: 2px solid #333;
     padding: 15px 40px;
     font-size: 1rem;
@@ -359,107 +359,201 @@ body {
 @media (max-width: 768px) {
     .top-nav {
         padding: 0 1rem;
+        height: 55px; /* Slightly shorter */
     }
     
     .nav-links {
         gap: 1rem;
     }
     
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
     .main-container {
-        padding: 2rem 1rem;
-    }
-    
-    .game-boundary {
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .browser-container {
-        width: 250px;
-        height: 160px;
-        right: 30px;
-    }
-    
-    .game-area {
-        height: 250px;
-    }
-    
-    .watermark div {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .bot {
-        width: 20px;
-        height: 20px;
+        padding: 1.5rem 0.75rem;
     }
     
     .main-headline {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        padding: 0 0.5rem;
+        text-align: center;
     }
     
     .sub-headline {
         font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links a:not(.login-btn) {
-        display: none;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+        text-align: center;
     }
     
     .game-boundary {
         padding: 1rem;
         margin: 1rem 0;
+        border-radius: 6px;
     }
     
     .browser-container {
-        width: 180px;
-        height: 120px;
-        right: 15px;
+        width: 220px;
+        height: 140px;
+        right: 25px;
     }
     
     .game-area {
-        height: 200px;
+        height: 220px;
     }
     
     .watermark div {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
     }
     
     .bot {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
+    }
+    
+    .cta-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .cta-sub-title {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .activate-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 0 0.75rem;
+        height: 50px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo-placeholder {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-links a:not(.login-btn) {
+        display: none;
+    }
+    
+    .login-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+        gap: 0.3rem;
+    }
+    
+    .login-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .main-container {
+        padding: 1rem 0.5rem;
     }
     
     .main-headline {
         font-size: 1.1rem;
         line-height: 1.3;
+        margin-bottom: 0.5rem;
+        padding: 0 0.25rem;
     }
     
     .sub-headline {
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        padding: 0 0.25rem;
+        line-height: 1.4;
+    }
+    
+    .game-boundary {
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+        border-radius: 4px;
+        max-width: 100%;
+    }
+    
+    .browser-container {
+        width: 160px;
+        height: 100px;
+        right: 10px;
+    }
+    
+    .browser-header {
+        height: 18px;
+        padding: 0 6px;
+    }
+    
+    .browser-dot {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .game-area {
+        height: 180px;
+    }
+    
+    .watermark div {
+        width: 35px;
+        height: 35px;
         font-size: 0.9rem;
+    }
+    
+    .bot {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .content-section {
+        margin: 1rem 0;
+        padding: 0 0.5rem;
     }
     
     .cta-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
     }
     
     .cta-sub-title {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
     }
     
     .activate-btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        border-radius: 3px;
+        letter-spacing: 0.3px;
     }
     
     .activate-btn.activated {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-        line-height: 1.2;
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        line-height: 1.1;
+    }
+    
+    .activate-btn.activated div:first-child {
+        font-size: 0.8rem !important;
+    }
+    
+    .activate-btn.activated div:last-child {
+        font-size: 0.7rem !important;
+        margin-top: 1px !important;
     }
 }
